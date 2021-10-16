@@ -2,8 +2,8 @@ document.querySelector('#userHit').addEventListener('click', userGame);
 document.querySelector('#pcStand').addEventListener('click', botGame);
 
 let blackJackGame = {
-  you: { box: '#flex-box-container-1', score: '#your-score' },
-  dealer: { box: '#flex-box-container-2', score: '#bot-score' },
+  you: { box: '#flex-box-container-1', score: '#your-score', scoreSum: 0 },
+  dealer: { box: '#flex-box-container-2', score: '#bot-score', scoreSum: 0 },
   cards: ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'A', 'J', 'K', 'Q'],
   cards_map: {
     2: 2,
@@ -41,7 +41,9 @@ function addCard(player) {
   imageDiv.src = `https://stackblitz.com/files/web-platform-d1dwgy/github/atif9010/web-platform-d1dwgy/master/blackjack_assets/images/${gameCards}.png`;
   document.querySelector(player.box).append(imageDiv);
   let score = blackJackGame.cards_map[gameCards];
-  
+  let sumScore =+ player.scoreSum + score;
+
+  document.querySelector(player.score).innerText = sumScore;
 }
 
 function scoreCalc() {}
