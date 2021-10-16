@@ -18,6 +18,6 @@ function userGame() {
 function addCard(player) {
   let gameCards = blackJackGame.cards[Math.floor(Math.random() * 13)];
   let imageDiv = document.createElement('img');
-  imageDiv.src = `blackjack_assets/images/${gameCards}.png`;
+  imageDiv.src = `https://stackblitz.com/files/web-platform-d1dwgy/github/atif9010/web-platform-d1dwgy/master/blackjack_assets/images/${gameCards}.png`;
   document.querySelector(player.box).append(imageDiv);
 }

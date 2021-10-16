@@ -36,3 +36,9 @@ table th {
 #flex-button-group {
   padding: 10px;
 }
+
+img {
+  width: 50px;
+  height: 50px;
+  display: flex;
+}
