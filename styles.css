@@ -1,0 +1,38 @@
+#main-container {
+  border: 2px solid black;
+  width: 75%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#flex-row-1,
+#flex-row-2 {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  border: 1px solid black;
+  background-image: url(https://thumbs.dreamstime.com/b/poker-table-felt-background-14782237.jpg);
+  background-position: initial;
+}
+
+#flex-box-container-1,
+#flex-box-container-2 {
+  border: 1px solid black;
+  height: 350px;
+  width: 50%;
+  color: white;
+}
+
+table,
+table td,
+table th {
+  justify-content: center;
+  margin: 0 auto;
+  border: 1px solid black;
+  padding: 5px;
+  text-align: center;
+}
+
+#flex-button-group {
+  padding: 10px;
+}
