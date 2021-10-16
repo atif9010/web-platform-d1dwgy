@@ -12,4 +12,12 @@ let blackJackGame = {
 
 function userGame() {
   const YOU = blackJackGame.you;
+  addCard(YOU);
+}
+
+function addCard(player) {
+  let gameCards = blackJackGame.cards[Math.floor(Math.random() * 13)];
+  let imageDiv = document.createElement('img');
+  imageDiv.src = `blackjack_assets/image/${gameCards}.png`;
+  document.querySelector(player.box).append(imageDiv);
 }
