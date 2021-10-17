@@ -8,7 +8,7 @@ let blackJackGame = {
   cards_map: {
     2: 2,
     3: 3,
-    3: 4,
+    4: 4,
     5: 5,
     6: 6,
     7: 7,
@@ -30,9 +30,11 @@ function userGame() {
   addCard(YOU);
 }
 
-function botGame() {
+async function botGame() {
   const DEALER = blackJackGame.dealer;
-  addCard(DEALER);
+  while (DEALER.scoreSum<15){
+    addCard(DEALER);
+  }
 }
 
 function addCard(player) {
@@ -40,10 +42,28 @@ function addCard(player) {
   let imageDiv = document.createElement('img');
   imageDiv.src = `https://stackblitz.com/files/web-platform-d1dwgy/github/atif9010/web-platform-d1dwgy/master/blackjack_assets/images/${gameCards}.png`;
   document.querySelector(player.box).append(imageDiv);
-  let score = blackJackGame.cards_map[gameCards];
-  let sumScore =+ player.scoreSum + score;
 
-  document.querySelector(player.score).innerText = sumScore;
+  let score;
+
+  if (gameCards == 'A' && player.scoreSum>15) {
+    score = 1;
+    console.log ('score is 1')
+        
+  } else if (gameCards == 'A' && player.scoreSum<15) {
+    score = 10;
+    console.log ('score is 10')
+  } else {
+    score = blackJackGame.cards_map[gameCards];
+    console.log ('score is free')
+      }
+    console.log (gameCards, score);
+  
+    
+  player.scoreSum += score;
+ 
+  document.querySelector(player.score).innerText = player.scoreSum;
 }
 
-function scoreCalc() {}
+function winner () {
+
+}
